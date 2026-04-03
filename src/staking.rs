@@ -373,6 +373,7 @@ impl Helius {
     ///
     /// `Vec<(Pubkey, Account)>` – keyed raw accounts.  You can deserialize them with
     /// `StakeStateV2::deserialize()` if you need to
+    #[allow(deprecated)]
     pub async fn get_stake_accounts(&self, wallet: Pubkey) -> Result<Vec<(Pubkey, Account)>> {
         let filters: Option<Vec<RpcFilterType>> = Some(vec![RpcFilterType::Memcmp(Memcmp::new(
             44,
